@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HAFS자습실 : Veritas Room</title>
+        <link rel="shortcut icon" type="image⁄x-icon" href="Images/cloud.png">
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">    
+        <link rel="stylesheet" href="mobile.css">
+        <!-- 초기화 -->
+        <style>
+            *{margin:0; padding:0;}
+            li{list-style: none;}
+            a{text-decoration: none;}
+            body 
+            {
+                max-width: 100%;
+                overflow-x: hidden;
+                font-family:'Malgun Gothic';
+            }
+            html{
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+        </style>
+        <!-- body -->
+        <style>
+            .card{
+                display:inline-block;
+                font-family: 'Malgun Gothic';
+                text-decoration: none;
+                height: 100%;
+                width: 100%;
+                border-radius:0.3em;
+                -moz-border-radius: 0.3em;
+                -webkit-border-radius: 0.3em;
+                background-color: white;
+                margin-left:35px;
+                color: black;
+                margin-top:12px;
+            }
+            .wrap{
+                width: device-width;
+                height: 250px;
+                overflow-x: scroll;
+                white-space:nowrap;
+            }
+            .menutxt{
+                text-align: center;
+                padding:5px;
+                width:100%; 
+                height:29x;
+            }
+            .wrap a{
+                width:200px;
+                height:89%;
+            }
+            #hiddenmenu { display: none; }
+            #hiddenmenu ~ * {
+            position: absolute;
+            transition: transform 0.4s;
+            }
+            #hiddenmenu:checked ~ * { transform: translate3d(200px, 0, 0);}
+            #hiddenmenu ~ label {
+            font-size: 54px;
+            top: -16px; left: 8px;
+            cursor: pointer;
+            z-index: 1;
+            }
+            #hiddenmenu ~ nav {
+            background: rgb(26,26,26);
+            width: 200px;
+            left: -200px;
+            height: 70%;
+            }
+            #hiddenmenu ~ nav * {
+            margin: 0; padding: 0;
+            color: white;
+            }
+            #hiddenmenu ~ nav header {
+            background-image:url('Images/menu-header.jpg');
+            background-size:100%;
+            padding: 1em;
+            }
+            #hiddenmenu ~ nav a {
+            display: block;
+            text-decoration: none;
+            padding: 1em;
+            }
+            #hiddenmenu ~ nav a:hover { background: gray; }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- 메뉴바와 메인 로고 -->
+        <div style="width:device-width; height:60px;">
+            <h6 id="title" style="font-size:25px;margin:0; margin-right: 15px; margin-top:9px; margin-bottom:5px; float:right;"><a href="index.html"><img src = "Images/cloud.png" width = "30px" style="margin-right:10px; position:relative; top:7px;"></a><a id="index" href = "index.html" style="text-decoration: none; color:black;"><span style="font-weight:bold;">veritas</span><span style="font-weight:lighter">room</span></a>
+            </h6>
+            <div style="float: left;margin-left:15px;margin-top:30px;background-image:url(Images/menu.png); background-repeat: no-repeat; background-size: 100%; width: 15px;">
+                <input id="hiddenmenu" type="checkbox" /><label for="hiddenmenu" style="margin-top:5px;">&equiv;</label>
+                <nav style="overflow-y:auto;">
+                    <header>Menu</header>
+                  <ul>
+                    <li><a id="user"></a></li>
+                    <li><a href="#">V홀 남자</a></li>
+                    <li><a href="#">V홀 여자</a></li>
+                    <li><a href="#">D홀 남자</a></li>
+                    <li><a href="#">D홀 여자</a></li>
+                    <li><a href="#">미술실</a></li>
+                    <li><a href="#">양계장</a></li>
+                    <li><a href="#">컨퍼런스 룸</a></li>
+                    <li><a href="#">남자기숙사 1층</a></li>
+                    <li><a href="GMCB0.html">남자기숙사 지하</a></li>
+                    <li><a href="#">여자기숙사 9층</a></li>
+                    <li><a href="#">여자기숙사 11층</a></li>
+                  </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- 대문 사진 -->
+        <div>
+            <div style="background-image: url('Images/mobileFront.jpg'); background-repeat: no-repeat; background-size: 100%; width: 100%; height : 230px;">
+            </div>
+            <div style="border: none;background-image: url('Images/mobilelink.jpg'); background-repeat: no-repeat; background-size: 100%; width: 100%; height : 170px;">
+                <div style="float: top; width:100%;height:33%;">
+                    <a href="https://hafs.hs.kr" target="_blank"><div style="float: top; width:100%;height:100%;"></div></a>
+                </div>
+                <div style="float: top; width:100%;height:33%;">
+                    <a href="https://hafs.riroschool.kr/" target="_blank"><div style="float: top; width:100%;height:100%;"></div></a>
+                </div>
+                <div style="float: top; width:100%;height:33%;">
+                    <a href="https://polar-earth-61256.herokuapp.com/" target="_blank"><div style="float: top; width:100%;height:100%;"></div></a>
+                </div>
+            </div>
+        </div>
+        <!-- 잔여석 확인 -->
+        <div style="background-color:#f2f3f7;">
+            <div class="wrap">
+                <a href="V3B.html" class = "card">
+                    <div style="background-image:url('Images/study/study1.jpg'); height:120px; background-size:100%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>V홀 자습실 - 남자</strong></p>잔여석 : </div>
+                </a>
+                <a href="V3G.html" class = "card">
+                    <div style="background-image:url('Images/study/study2.jpg'); height:120px; background-size:100%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>V홀 자습실 - 여자</strong></p>잔여석 : </div>
+                </a>
+                <a href="DB.html" class = "card">
+                    <div style="background-image:url('Images/study/study3.jpg'); height:120px; background-size:120%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>D홀 자습실 - 남자</strong></p>잔여석 : </div>
+                </a>
+                <a href="DG.html" class = "card">
+                    <div style="background-image:url('Images/study/study4.jpg'); height:120px; background-size:100%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>D홀 자습실 - 여자</strong></p>잔여석 : </div>
+                </a>
+                <a href="Art.html" class = "card">
+                    <div style="background-image:url('Images/study/study5.jpg'); height:120px; background-size:120%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>미술실 자습실 </strong></p>잔여석 : </div>
+                </a>
+                <a href="Chicken.html" class = "card">
+                    <div style="background-image:url('Images/study/study6.jpg'); height:120px; background-size:120%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>양계장 자습실</strong></p>잔여석 : </div>
+                </a>
+                <a href="Conference.html" class = "card">
+                    <div style="background-image:url('Images/study/study7.jpg'); height:120px; background-size:120%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>컨퍼런스 룸</strong></p>잔여석 : </div>
+                </a>
+                <a href="GMCB1.html" class = "card">
+                    <div style="background-image:url('Images/study/study8.jpg'); height:120px; background-size:150%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>남자 기숙사 1층 자습실</strong></p>잔여석 : </div>
+                </a>
+                <a href="GMCB0.html" class = "card">
+                    <div style="background-image:url('Images/study/study9.jpg'); height:120px; background-size:120%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div id="GMCB0"></div>
+                </a>
+                <a href="GMCG.html" class = "card">
+                    <div style="background-image:url('Images/study/study10.jpg'); height:120px; background-size:120%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>여자 기숙사 자습실</strong></p>잔여석 : </div>
+                </a>
+                <a href="GMCG.html" class = "card">
+                    <div style="background-image:url('Images/study/study11.jpg'); height:120px; background-size:120%; background-repeat: no-repeat; background-position: center center; margin:0; border-radius: 5px 5px 0px 0px;"></div>
+                    <div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>여자 기숙사 자습실</strong></p>잔여석 : </div>
+                </a>
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script>
+            var firebaseEmailAuth;
+            var firebaseDatabase;
+            var config = {
+                apiKey: "AIzaSyDaIdnpBCFNFuBJb5TmypMQxkfyIkA96GY",
+                authDomain: "hafs-sc.firebaseapp.com",
+                databaseURL: "https://hafs-sc.firebaseio.com",
+                projectId: "hafs-sc",
+                storageBucket: "gs://hafs-sc.appspot.com/",
+                messagingSenderId: "493941439878"
+            };
+            firebase.initializeApp(config);
+       
+            firebaseEmailAuth = firebase.auth();
+            firebaseDatabase = firebase.database();
+            firebase.auth().onAuthStateChanged(function(user) {
+                var user = firebase.auth().currentUser;
+                if (user!= null) {
+                    getUserid.innerHTML = '<a id="user" href="javascript:void(0);" onclick="logout()" style="text-align: left; padding:0px;">로그아웃</a>'
+                    firebaseDatabase.ref("users/"+user.uid).once('value').then(function(snapshot){
+                        var lastDate = snapshot.val().last_changed_Date;
+                        var lastMonth = snapshot.val().last_changed_Month;
+                        var lastYear = snapshot.val().last_changed_Year;
+                        var currentDate = new Date().getDate();
+                        var currentMonth = new Date().getMonth();
+                        var currentYear = new Date().getFullYear();
+                        userRef = firebaseDatabase.ref('users/'+user.uid);
+                        if (Math.abs(lastDate-currentDate)>0 || Math.abs(lastMonth-currentMonth)>0 || Math.abs(lastYear-currentYear)>0) {
+                            userRef.update({
+                                veritasroom : "none",
+                            });
+                        }
+                        
+                        userRef.update({
+                            last_changed_Date : currentDate,
+                            last_changed_Month : currentMonth,
+                            last_changed_Year : currentYear,
+                        });
+                    });
+                }
+                else {
+                    getUserid.innerHTML = '<a id="user" href="login.html" style="text-align: left; padding:0px;">로그인 및 회원가입</a>'
+                }
+            });
+            var getUserid = document.getElementById("user");
+            function logout(){
+                firebase.auth().signOut().then(function() {
+                    alert("로그아웃되었습니다! 즐거운 하루되세요!");
+                }).catch(function(error) {
+                    alert("로그아웃에 실패하였습니다. 다시 한 번 시도해주세요.");
+                });
+            }
+
+            var get_GMCB0_id = document.getElementById("GMCB0");
+            firebaseDatabase.ref("veritasroom/GMCB0").once('value').then(function(snapshot){
+                var GMCB0_total = snapshot.val().total;
+                get_GMCB0_id.innerHTML = '<div class="indextxt" style="padding:12px;padding-top: 5px;"><p><strong>남자 기숙사 B1 자습실</strong></p>잔여석 : '+GMCB0_total+'</div>'
+
+            });
+
+            window.onload = function(){
+                timer = window.setInterval(
+                    function(){
+                        var currentHour = new Date().getHours();
+                        var currentMinute = new Date().getMinutes();
+                        if (currentHour==15 && currentMinute == 58) {
+                            firebase.database().ref('veritasroom/GMCB0').update({total : 40,});
+                            firebase.database().ref('veritasroom/GMCB0/A').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                            firebase.database().ref('veritasroom/GMCB0/B').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                            firebase.database().ref('veritasroom/GMCB0/C').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                            firebase.database().ref('veritasroom/GMCB0/D').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                            firebase.database().ref('veritasroom/GMCB0/E').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                            firebase.database().ref('veritasroom/GMCB0/F').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                            firebase.database().ref('veritasroom/GMCB0/A').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                            firebase.database().ref('veritasroom/GMCB0/G').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                            firebase.database().ref('veritasroom/GMCB0/H').update({
+                                0 : 0,
+                                1 : 0,
+                                2 : 0,
+                                3 : 0,
+                                4 : 0,
+                            });
+                        }
+                    },50000);
+            }
+        </script>
+    </body>
+</html>

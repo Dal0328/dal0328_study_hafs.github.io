@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HAFS자습실 : Veritas Room</title>
+        <link rel="shortcut icon" type="image⁄x-icon" href="Images/cloud.png">
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">    
+        <link rel="stylesheet" href="mobile.css">
+    </head>
+
+    <body>
+        <div style="background-color:#f2f3f7;width: 100%; height:500px">
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script>
+            var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
+            var firebaseDatabase; //파이어베이스 db 모듈 전역변수
+            //파이어 베이스 초기화 코드
+            var config = {
+                apiKey: "AIzaSyA9vMhLuZKGJUbLVooYjTd4yMryZtyWAxA",
+                authDomain: "veritasroom-e820c.firebaseapp.com",
+                databaseURL: "https://veritasroom-e820c.firebaseio.com",
+                projectId: "veritasroom-e820c",
+                storageBucket: "gs://veritasroom-e820c.appspot.com/",
+                messagingSenderId: "56333902674"
+            };
+            firebase.initializeApp(config);
+       
+            firebaseEmailAuth = firebase.auth();
+            firebaseDatabase = firebase.database();
+        </script>
+    </body>
+</html>

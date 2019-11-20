@@ -1,0 +1,46 @@
+*{margin:0; padding:0;}
+li{list-style: none;}
+a{text-decoration: none;}
+body 
+{
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family:'Malgun Gothic';
+}
+html{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.card{
+    display:inline-block;
+    font-family: 'Malgun Gothic';
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    border-radius:0.3em;
+    -moz-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    background-color: white;
+    margin-left:35px;
+    color: black;
+}
+.wrap{
+    width: device-width;
+    height: 250px;
+    overflow-x: scroll;
+    white-space:nowrap;
+}
+.menutxt{
+    text-align: center;
+    padding:5px;
+    width:100%; 
+    height:29x;
+}
+.wrap a{
+    width:200px;
+    height:89%;
+}
+#nav{margin:0; padding:0; list-style:none;display:block;} 
+#nav li {display:block;}
+#nav, #toggle {display:none;} 
+#toggle:checked + #nav{display: inline;}

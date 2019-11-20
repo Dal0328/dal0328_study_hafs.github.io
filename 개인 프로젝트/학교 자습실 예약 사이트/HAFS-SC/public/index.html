@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HAFS Student Council</title>
+        <!-- 아이콘 바탕이 지저분하다. 학생회한테 부탁하자. -->
+        <link rel="shortcut icon" type="images⁄x-icon" href="Images/hafs.jpg">
+        <meta charset = "utf-8">
+        <meta name="viewport" content="initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="head">
+            <div class="linkl"></div>
+            <a id="join"></a>
+            <a id="login"></a>
+            <input id="hiddenmenu" type="checkbox" /><label for="hiddenmenu">&equiv;</label>
+            <nav style="overflow-y:auto;z-index: 10;">
+                <header>Menu</header>
+                <ul>
+                    <li><a href="http://hafs.hs.kr" target="_blank">HAFS OFFICIAL HOMEPAGE</a></li>
+                    <li><a href="https://hafs.riroschool.kr" target="_blank">HAFS RIROSCHOOL</a></li>
+                    <li><a href="index.html">HAFS STUDENT BODY COUNCIL</a></li>
+                    <li><a href="https://polar-earth-61256.herokuapp.com" target="_blank">HAFS JIKBANG</a></li>
+                    <li><a href="https://veritasroom-e820c.firebaseapp.com" target="_blank">HAFS VERITAS ROOM</a></li>
+                    <li><a href="epd-index.html" target="_blank">HAFS Event Planning Department</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div>
+            <div class="mainbox">
+                <div style="z-index:1; overflow:hidden;">
+                    
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class = "subbox-1"> 
+            </div>
+        </div>
+        <div class="subbox-2">
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script>
+            var config = {
+                apiKey: "AIzaSyDaIdnpBCFNFuBJb5TmypMQxkfyIkA96GY",
+                authDomain: "hafs-sc.firebaseapp.com",
+                databaseURL: "https://hafs-sc.firebaseio.com",
+                projectId: "hafs-sc",
+                storageBucket: "gs://hafs-sc.appspot.com/",
+                messagingSenderId: "493941439878"
+            };
+            firebase.initializeApp(config);
+            firebaseDatabase = firebase.database();
+            var getUserjoin = document.getElementById("join");
+            var getUserlogin = document.getElementById("login");
+            function logout(){
+                firebase.auth().signOut().then(function() {
+                    alert("로그아웃 성공");
+                }).catch(function(error) {
+                    alert("로그아웃 실패");
+                });
+            }
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                
+                if (user) {
+                    getUserjoin.innerHTML = '<a class = "linkjoin" id="join" href="javascript:void(0);" onclick="logout()"><span class="linkjointxt">로그아웃</span></a>';
+                    firebaseDatabase.ref("users/"+user.uid).once('value').then(function(snapshot){
+                        getUserlogin.innerHTML = '<a class = "linklogin" id="login" href="login.html">'+snapshot.val().name+'</a>';
+                    });
+                    
+                } else {
+                    getUserjoin.innerHTML = '<a class = "linkjoin" id="join" href="join.html"><span class="linkjointxt">회원가입</span></a>';
+                    getUserlogin.innerHTML = '<a class = "linklogin" id="login" href="login.html">로그인</a>';
+                }
+
+            });
+
+        </script>
+    </body>
+</html>

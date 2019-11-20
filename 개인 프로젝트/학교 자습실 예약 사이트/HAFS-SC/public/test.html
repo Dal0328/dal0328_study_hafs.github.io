@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HAFS Student Council</title>
+        <!-- 아이콘 바탕이 지저분하다. 학생회한테 부탁하자. -->
+        <link rel="shortcut icon" type="images⁄x-icon" href="Images/hafs.jpg">
+        <meta charset = "utf-8">
+        <style>
+            html, body {
+            width: 100%;
+            height: 100%;
+            }
+            body {
+            background-color:rgb(199, 128, 21);
+            background-repeat: no-repeat;
+            background-size : 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            .man {
+            width: 200px;
+            height: 360px;
+            position:fixed;
+
+            }
+            .head {
+            width: 70px;
+            height: 70px;
+            position:relative;
+            left:-70px;
+            top: 15px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation-name: body;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            }
+            .eye{
+                width:10px;
+                height:10px;
+                background-color:rgb(50,50,50);
+                position: relative;
+                border-radius: 50%;
+                left: 45px;
+                top : 18px;
+            }
+            .body {
+            height: 144px;
+            width: 62px;
+            background-color: #fff;
+            border-radius: 70% 90% 0 0;
+            transform: skewX(-2deg);
+            position: relative;
+            left: -50px;
+            top : 30px;
+            animation-name: body;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            }
+            .foot {
+            width: 40px;
+            height: 14px;
+            border-radius: 10px 80% 4px 4px;
+            transform: skewX(5deg);
+            background-color: #fff;
+            display: inline-block;
+            animation-name: foot;
+            animation-duration: 1.8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            }
+            .foot:last-child {
+            margin-left: -40px;
+            animation-delay: 0.9s;
+            }
+            .feet {
+            text-align: left;
+            position: relative;
+            top: 100px;
+            left: -66px;
+            }
+            .feet:before {
+            width: 120px;
+            height: 8px;
+            border-radius: 50%;
+            content: "";
+            background: rgba(0, 0, 0, .1);
+            position: absolute;
+            bottom: -2px;
+            left: -16px;
+            animation-name: shadow;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            }
+            @keyframes foot {
+            20% {
+                transform: translate3d(34px, -16px, 0) rotate(4deg);
+            }
+            26% {
+                transform: translate3d(34px, -10px, 4) rotate(0deg);
+            }
+            40% {
+                transform: translate3d(56px, -6px, 0) rotate(-6deg);
+            }
+            44% {
+                transform: translate3d(56px, 0, 0) rotate(0deg);
+            }
+            }
+            @keyframes body {
+            25% {
+                transform: translateY(5px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(5px);
+            }
+            }
+            @keyframes shadow {
+            25% {
+                transform: scale(1.1);
+            }
+            75% {
+                transform: scale(0.96);
+            }
+            }
+            * {
+            box-sizing: border-box;
+            }
+            body {
+            font-family: 'Fauna One', serif;
+            }
+            body, html {
+            height: 100%;
+            }
+            .wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            perspective: 1000;
+            }
+            .section {
+            height: 100%;
+            width: calc(100% / 5);
+            float: left;
+            position: relative;
+            }
+            .section:nth-child(1) {
+            background: #f64747;
+            }
+            .section:nth-child(2) {
+            background: #22a7f0;
+            }
+            .section:nth-child(3) {
+            background: #f9690e;
+            }
+            .section:nth-child(4) {
+            background: #9b59b6;
+            }
+            .section:nth-child(5) {
+            background: #03c9a9;
+            }
+            .sections {
+            width: 500%;
+            height: 100%;
+            }
+            .section__title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: #fff;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="man">
+            <div class="head">
+                <div class="eye"></div>
+            </div>
+            <div class="body"></div>
+            <div class="feet">
+                <div class="foot"></div>
+                <div class="foot"></div>
+            </div>
+        </div>
+        <div class="wrapper" id="js-wrapper">
+            <div class="sections" id="js-slideContainer">
+                <section class="section">
+                    <span class="section__title" id="title1">Section One</span>
+                <span id="trigger--title1"></span>
+                </section>
+                <section class="section">
+                    <span class="section__title" id="title2">Section Two</span>
+                <span id="trigger--title2"></span>
+                </section>
+                <section class="section">
+                    <span class="section__title" id="title3">Section Three</span>
+                <span id="trigger--title3"></span>
+                </section>
+                <section class="section">
+                    <span class="section__title" id="title4">Section Four</span>
+                <span id="trigger--title4"></span>
+                </section>
+            <section class="section">
+                    <span class="section__title" id="title5">Section Five</span>
+                <span id="trigger--title5"></span>
+                </section>
+            </div>
+        </div>
+        <script>
+            $(function () { // wait for document ready
+  
+            var controller = new ScrollMagic.Controller();
+
+            var horizontalSlide = new TimelineMax()
+            // animate panels
+            .to("#js-slideContainer", 1,   {x: "-20%"})   
+            .to("#js-slideContainer", 1,   {x: "-40%"})
+            .to("#js-slideContainer", 1,   {x: "-60%"})
+            .to("#js-slideContainer", 1,   {x: "-80%"})
+
+
+            // create scene to pin and link animation
+            new ScrollMagic.Scene({
+                triggerElement: "#js-wrapper",
+                triggerHook: "onLeave",
+                duration: "400%"
+            })
+                .setPin("#js-wrapper")
+                .setTween(horizontalSlide)
+                //.addIndicators() // add indicators (requires plugin)
+                .addTo(controller);
+            
+            
+            
+            });
+        </script>
+    </body>
+</html>
