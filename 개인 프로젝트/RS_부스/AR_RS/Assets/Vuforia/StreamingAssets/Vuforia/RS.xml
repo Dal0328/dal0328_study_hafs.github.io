@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="fake2" size="0.082020 0.082553" />
+    <ImageTarget name="fake1" size="0.072231 0.071702" />
+    <ImageTarget name="stamp" size="0.127529 0.127794" />
+    <ImageTarget name="king-final" size="0.135202 0.117740" />
+  </Tracking>
+</QCARConfig>

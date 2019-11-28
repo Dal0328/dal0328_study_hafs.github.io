@@ -1,0 +1,15 @@
+HTTrack3.49-2+htsswf+htsjava launched on Tue, 17 Sep 2019 11:54:12 at https://polar-earth-61256.herokuapp.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://polar-earth-61256.herokuapp.com/ -O1 "C:\Users\dahyun\Desktop\IWS\jikbang" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:54:24	Error: 	"Not Found" (404) at link https://polar-earth-61256.herokuapp.com/css/images/icons/favicon.ico (from https://polar-earth-61256.herokuapp.com/)
+11:54:29	Warning: 	Retry after error -5 (error:00000005:lib(0):func(0):DH lib) at link https://i.imgur.com/I9hk3OI.png (from https://polar-earth-61256.herokuapp.com/)
+11:54:33	Warning: 	Retry after error -5 (error:00000005:lib(0):func(0):DH lib) at link https://i.imgur.com/I9hk3OI.png (from https://polar-earth-61256.herokuapp.com/)
+11:54:36	Error: 	"error:00000005:lib(0):func(0):DH lib" (-5) after 2 retries at link https://i.imgur.com/I9hk3OI.png (from https://polar-earth-61256.herokuapp.com/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 24 seconds : 39 links scanned, 34 files written (3107759 bytes overall) [3119669 bytes received at 129986 bytes/sec], 6.0 requests per connection
+(2 errors, 2 warnings, 0 messages)

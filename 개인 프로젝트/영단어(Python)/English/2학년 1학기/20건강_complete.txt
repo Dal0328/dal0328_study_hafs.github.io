@@ -1,0 +1,312 @@
+낙태
+abortion
+찰과상
+abrasion
+남용
+abuse
+중독자
+addict
+중독
+addiction
+중독성의
+addictive
+마취제
+anesthetic
+발목
+ankle
+항생제
+antibiotic
+소독제
+antiseptic
+인공 호흡
+artificial respiration
+소화하다
+assimilate
+소화
+assimilation
+입원하다
+be admitted to the hospital
+피를 흘리다
+bleed
+혈압
+blood pressure
+혈액 검사
+blood test
+혈액형
+blood type
+병력
+case history
+증세
+case
+건강 진단
+checkup
+가슴
+chest
+만성 관절염
+chronic arthritis
+만성의
+chronic
+클리닉
+clinic
+진료소의
+clinical
+안색
+complexion
+임신하다
+conceive
+임신
+conception
+전염
+contagion
+전염성의
+contagious
+피임
+contraception
+피임약
+contraceptive
+쥐
+cramp
+다리를 저는 사람
+cripple
+다리를 저는
+crippled
+치과
+dental clinic
+진단하다
+diagnose
+진단
+diagnosis
+소화하다
+digest
+소화
+digestion
+소화의
+digestive
+불구
+disability
+상이군인
+disabled soldier
+불구의
+disabled
+약국
+dispensary
+현기증 나는
+dizzy
+복용량
+dosage
+응급실
+emergency room
+유행병
+epidemic
+치명적인
+fatal
+피로
+fatigue
+열
+fever
+꼭 맞다
+fit
+적합한
+fit
+건강
+fitness
+독감
+flu
+이마
+forehead
+유전자
+gene
+유전의
+genetic
+유전학
+genetics
+세균
+germ
+신체적 장애가 있는
+handicapped
+두통
+headache
+치유되다
+heal
+유전하는
+hereditary
+유전 형질
+heredity
+쉰
+hoarse
+종합병원
+hospital
+입원
+hospitalization
+위생학
+hygiene
+면역
+immunization
+면역이 되게 하다
+immunize
+감염시키다
+infect
+감염
+infection
+양호실
+infirmary
+해로운
+injurious
+상처
+injury
+예방 접종하다
+inoculate
+중환자실
+intensive care unit
+신장
+kidney
+산고
+labor
+간
+liver
+폐
+lung
+산부인과
+maternity clinic
+약
+medication
+유산
+miscarriage
+메스꺼움
+nausea
+영양분을 주다
+nourish
+영양
+nutrition
+영양분이 풍부한
+nutritious
+연고
+ointment
+발병
+onset
+수술하다
+operate
+수술
+operation
+외래환자
+outpatient
+의사의 처방 없이 판매할 수 있는
+over-the-counter
+땀
+perspiration
+땀을 흘리다
+perspire
+약제사
+pharmacist
+약국
+pharmacy
+알약
+pill
+전염병
+plague
+성형 수술
+plastic surgery
+임신
+pregnancy
+임신한
+pregnant
+처방하다
+prescribe
+처방전
+prescription
+예방하다
+prevent
+예방
+prevention
+낙태의 합법화에 찬성하는
+pro-choice
+낙태의 합법화에 반대하는
+pro-life
+맥박
+pulse
+회복하다
+recover
+회복
+recovery
+완화시키다
+relieve
+호흡
+respiration
+호흡의
+respiratory
+호흡하다
+respire
+갈비뼈
+rib
+건장한
+robust
+콧물이 나오는
+runny
+위생의
+sanitary
+공중위생
+sanitation
+재채기
+sneeze
+덜어 주다
+soothe
+아픈
+sore
+경련
+spasm
+골절
+sprain
+키
+stature
+소독하다
+sterilize
+사산의
+stillborn
+살찐
+stout
+발작
+stroke
+수술
+surgery
+수술의
+surgical
+병에 걸리기 쉬운
+susceptible
+증상
+symptom
+신체장애인들
+the disabled
+치료 전문가
+therapist
+치료 요법
+therapy
+고동치다
+throb
+편도선
+tonsil
+수혈
+transfusion
+이식 수술
+transplant surgery
+이식하다
+transplant
+치료
+treatment
+백신 접종을 하다
+vaccinate
+백신 접종
+vaccination
+백신
+vaccine
+생명 징후
+vital signs
+힘
+vifor
+원기 왕성한
+vigorous
+토하다
+vomit
+건강에 좋은
+wholesome
+손목
+wrist
