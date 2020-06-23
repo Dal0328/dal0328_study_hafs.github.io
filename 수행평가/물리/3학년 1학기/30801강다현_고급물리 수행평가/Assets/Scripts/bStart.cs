@@ -4,18 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+/*
+================================================================================================
+ - UI의 시작, 질량 및 속도 설정, 충돌 후 방향 설정(각도 설정) 등의 기능들을 구현함
+ - Math와 Monobehaviour 클래스를 사용함(System, UnityEngine)
+================================================================================================
+*/
+
 public class bStart : MonoBehaviour
 {
+    //오브젝트 및 변수 지정
     public GameObject Object1;
     public GameObject Object2;
     public GameObject Target1;
     public GameObject Target2;
-    public Camera lCamera;
-    public Camera cCamera;
+    public Camera lCamera; //실험실 좌표계
+    public Camera cCamera; //질량중심 좌표계
     public Text txtObj;
     public Text btxt;
-    public InputField InputObject1;
-    public InputField InputObject2;
+    public InputField InputObject1; //물체1의 질량, 속도
+    public InputField InputObject2; //물체2의 질량
     public Rigidbody rb_Object1;
     public Rigidbody rb_Object2;
     public Slider uSlider;
@@ -36,18 +44,18 @@ public class bStart : MonoBehaviour
     string sObject1;
     string sObject2;
 
-    public void OnclickbStart(){
-        if (notPressed){
+    public void OnclickbStart(){ //시작 버튼을 누르면 작동되는 함수
+        if (notPressed){ //시작 상태의 버튼 누를 시 작동
             radian = uSlider.value * Math.PI;
             dCos = Math.Cos(radian);
-            tTan = Math.Sqrt((1.0f-dCos)/(1.0f+dCos));
+            tTan = Math.Sqrt((1.0f-dCos)/(1.0f+dCos)); // 2배각 공식을 이용하여 1/2각만큼의 tan값을 구함
 
-            sObject1= InputObject1.text;
+            sObject1= InputObject1.text; //오브젝트1의 질량과 속도
             tObject1 = sObject1.Split(new char[] {','});
             mass_Object1 = float.Parse(tObject1[0]);
             velocity_Object1 = int.Parse(tObject1[1]);
             
-            sObject2= InputObject2.text;
+            sObject2= InputObject2.text; //오브젝트2의 질량
             mass_Object2 = float.Parse(sObject2);
             
             rb_Object1 = Object1.GetComponent<Rigidbody>();
@@ -61,7 +69,7 @@ public class bStart : MonoBehaviour
             btxt.text = "초기화";
             notPressed = false;
         }
-        else{
+        else{ //초기화 상태의 버튼 누를 시 작동
             notPressed = true;
             btxt.text = "시작";
             isCollide = false;
@@ -77,20 +85,22 @@ public class bStart : MonoBehaviour
 
     void Update()
     {
-        if(Object1.transform.position.z-Object2.transform.position.z<=5){
+        if(Object1.transform.position.z-Object2.transform.position.z<=5){ //오브젝트의 크기가 5이므로 z값의 차가 5 이하일 때 충돌이라 여기고 작동
             isStart = false;
             isCollide = true;
+            //탄성 충돌일 때, 운동량 보존 법칙과 운동에너지 보존 법칙을 고려한 충돌 이후 속도
             lvelocity_Object1 = Math.Sqrt((Math.Pow(velocity_Object1,2))*(1.0f/(1.0f+(mass_Object2/mass_Object1)*(4.0f*(Math.Pow(dCos,2))/(Math.Pow(1.0f-mass_Object2/mass_Object1,2))))));
             lvelocity_Object2 = Math.Sqrt((Math.Pow(velocity_Object1,2)-Math.Pow(lvelocity_Object1,2))*(mass_Object1/mass_Object2));
             txtObj.text = "진행 방향의 각도(라디안)\r\n: "+radian.ToString()+"\r\n물체1 질량 : "+tObject1[0]+"\r\n물체1 속력 : "+lvelocity_Object1.ToString()+"\r\n물체2 질량 : "+sObject2+"\r\n물체2 속력 : "+lvelocity_Object2.ToString();
         }
-        if (isStart){
+        if (isStart){ //충돌 전 오브젝트1을 일정한 속도로 오브젝트 2를 향하여 이동
             Object1.transform.position = Vector3.MoveTowards(Object1.transform.position,Object2.transform.position,velocity_Object1*speed * Time.deltaTime);
         }
-        else if(isCollide){
+        else if(isCollide){ //충돌 후 작동
+            //오브젝트가 충돌 이후 화면 밖으로 벗어날 것을 고려하여 카메라의 고도 점점 높임
             cCamera.transform.position += new Vector3(0.0f,0.1f,0.0f);
             lCamera.transform.position += new Vector3(0.0f,0.1f,0.0f);
-            if (notCal){
+            if (notCal){ //방향 설정(타켓 오브젝트 위치시킴)
                 notCal = false;
                 if (radian==0){
                     Target1.transform.position = Target1.transform.position + new Vector3(0.0f,0.0f,100.0f);
@@ -101,7 +111,7 @@ public class bStart : MonoBehaviour
                     Target2.transform.position = Target2.transform.position + new Vector3(-100.0f*Convert.ToSingle(tTan),0.0f,-100.0f);
                 }
             }
-            else{
+            else{ //타겟 오브젝트 설정 이후 해당 방향으로 오브젝트1,2를 일정한 속도로 이동
                 Object1.transform.position = Vector3.MoveTowards(Object1.transform.position,Target1.transform.position,Convert.ToSingle(lvelocity_Object1)*speed * Time.deltaTime);
                 Object2.transform.position = Vector3.MoveTowards(Object2.transform.position,Target2.transform.position,Convert.ToSingle(lvelocity_Object2)*speed * Time.deltaTime);
             }
