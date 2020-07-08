@@ -18,6 +18,7 @@ public class bStart : MonoBehaviour
     public GameObject Object2;
     public GameObject Target1;
     public GameObject Target2;
+    public GameObject Cube;
     public Camera lCamera; //실험실 좌표계
     public Camera cCamera; //질량중심 좌표계
     public Text txtObj;
@@ -32,6 +33,8 @@ public class bStart : MonoBehaviour
     bool isStart = false;
     bool isCollide = false;
     bool notCal = true;
+    bool rotate = true;
+    bool cubemv = true;
     int velocity_Object1;
     float mass_Object1;
     float mass_Object2;
@@ -63,7 +66,7 @@ public class bStart : MonoBehaviour
             rb_Object1.mass = mass_Object1;
             rb_Object2.mass = mass_Object2;
 
-            isStart = true;
+            cubemv = true;
 
             txtObj.text = "진행 방향의 각도(라디안)\r\n: 0"+"\r\n물체1 질량 : "+tObject1[0]+"\r\n물체1 속력 : "+tObject1[1]+"\r\n물체2 질량 : "+sObject2+"\r\n물체2 속력 : 0";
             btxt.text = "초기화";
@@ -85,6 +88,13 @@ public class bStart : MonoBehaviour
 
     void Update()
     {
+        if (cubemv){
+            Cube.transform.position = Vector3.MoveTowards(Cube.transform.position,Object1.transform.position,velocity_Object1*speed * Time.deltaTime);
+            if(Cube.transform.position.z <= 52.7f){
+                cubemv = false;
+                isStart = true;
+            }
+        }
         if(Object1.transform.position.z-Object2.transform.position.z<=5){ //오브젝트의 크기가 5이므로 z값의 차가 5 이하일 때 충돌이라 여기고 작동
             isStart = false;
             isCollide = true;
@@ -95,6 +105,19 @@ public class bStart : MonoBehaviour
         }
         if (isStart){ //충돌 전 오브젝트1을 일정한 속도로 오브젝트 2를 향하여 이동
             Object1.transform.position = Vector3.MoveTowards(Object1.transform.position,Object2.transform.position,velocity_Object1*speed * Time.deltaTime);
+            
+            if (rotate){
+                Object1.transform.eulerAngles += new Vector3(2,0,0);
+                if(Object1.transform.eulerAngles.x >= 85.0f){
+                    rotate = false;
+                }
+            }
+            else{
+                Object1.transform.eulerAngles += new Vector3(-2,0,0);
+                if(Object1.transform.eulerAngles.x <= -85.0f){
+                    rotate = true;
+                }
+            }
         }
         else if(isCollide){ //충돌 후 작동
             //오브젝트가 충돌 이후 화면 밖으로 벗어날 것을 고려하여 카메라의 고도 점점 높임
@@ -112,6 +135,20 @@ public class bStart : MonoBehaviour
                 }
             }
             else{ //타겟 오브젝트 설정 이후 해당 방향으로 오브젝트1,2를 일정한 속도로 이동
+                if (rotate){
+                    Object1.transform.eulerAngles += new Vector3(2,0,0);
+                    Object2.transform.eulerAngles += new Vector3(2,0,0);
+                    if(Object1.transform.eulerAngles.x >= 85.0f){
+                        rotate = false;
+                    }
+                }
+                else{
+                    Object1.transform.eulerAngles += new Vector3(-2,0,0);
+                    Object2.transform.eulerAngles += new Vector3(-2,0,0);
+                    if(Object1.transform.eulerAngles.x <= -85.0f){
+                        rotate = true;
+                    }
+                }
                 Object1.transform.position = Vector3.MoveTowards(Object1.transform.position,Target1.transform.position,Convert.ToSingle(lvelocity_Object1)*speed * Time.deltaTime);
                 Object2.transform.position = Vector3.MoveTowards(Object2.transform.position,Target2.transform.position,Convert.ToSingle(lvelocity_Object2)*speed * Time.deltaTime);
             }
